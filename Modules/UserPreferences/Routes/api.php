@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\UserPreferences\Http\Controllers\UserPreferencesController;
+use Modules\UserPreferences\Http\Controllers\Api\UserPreferencesController;
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
-    Route::apiResource('userpreferences', UserPreferencesController::class)->names('userpreferences');
+Route::group([
+    'prefix' => 'v1',
+    'middleware' => ['auth:sanctum']
+], function () {
+    Route::put('user-preferences', [UserPreferencesController::class, 'update']);
 });
