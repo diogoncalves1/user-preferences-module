@@ -1,5 +1,6 @@
 {
     "UserPreferences": true,
     "User": true,
-    "Currency": true
+    "Currency": true,
+    "ApiResponder": true
 }

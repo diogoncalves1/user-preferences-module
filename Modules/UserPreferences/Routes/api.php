@@ -5,7 +5,7 @@ use Modules\UserPreferences\Http\Controllers\Api\UserPreferencesController;
 
 Route::group([
     'prefix' => 'v1',
-    'middleware' => ['auth:sanctum']
+    'middleware' => ['auth:sanctum', 'setlocale']
 ], function () {
     Route::put('user-preferences', [UserPreferencesController::class, 'update']);
 });
