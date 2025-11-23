@@ -17,7 +17,7 @@ class LanguageRepository implements RepositoryInterface
 
     public function allCodes()
     {
-        $this->all()->pluck('code')->toArray();
+        return $this->all()->pluck('code')->toArray();
     }
 
     public function store(Request $request)
